@@ -120,8 +120,8 @@ class Ball
     @color = color
     @block = r.circle(x, y, 4).attr({ fill: @color, stroke: '#888888'})
     
-    @vx = 4
-    @vy = 8
+    @vx = 0.4
+    @vy = 0.8
   
   update: ->
     @_move(@vx, @vy)
@@ -169,6 +169,8 @@ class Ball
   enpower: ->
     @vx = Math.random()*8 + 8
     @vy = Math.random()*8 + 8
+    @vx /= 10
+    @vy /= 10
     @vy *= -1
 
 
@@ -178,7 +180,7 @@ block = new Block(3,4)
 
 id = setInterval(->
   map.render()
-, 100)
+, 10)
 map.render()
 
 window.document.onkeydown = (e) ->

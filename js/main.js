@@ -190,8 +190,8 @@
         fill: this.color,
         stroke: '#888888'
       });
-      this.vx = 4;
-      this.vy = 8;
+      this.vx = 0.4;
+      this.vy = 0.8;
     }
 
     Ball.prototype.update = function() {
@@ -250,6 +250,8 @@
     Ball.prototype.enpower = function() {
       this.vx = Math.random() * 8 + 8;
       this.vy = Math.random() * 8 + 8;
+      this.vx /= 10;
+      this.vy /= 10;
       return this.vy *= -1;
     };
 
@@ -263,7 +265,7 @@
 
   id = setInterval(function() {
     return map.render();
-  }, 100);
+  }, 10);
 
   map.render();
 
